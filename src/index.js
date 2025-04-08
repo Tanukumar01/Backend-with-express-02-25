@@ -2,25 +2,24 @@ const express = require("express")
 const app = express()
 const user = require("./user.json")
 const userRouter = require("./routes/userRoutes")
-<<<<<<< HEAD
 
-=======
+
 const auth  = require("./middleware/auth")
 
 
 
->>>>>>> f821520 (final Authorization  is completed)
+
 const mongoose = require("mongoose")
 
 app.use(express.json())
 
-<<<<<<< HEAD
+
 app.use("/users", userRouter)
 
 app.get("/home", (req, res) => {
     res.status(201).json(user);
 })
-=======
+
 app.use((req,res,next)=>{
    console.log("HTTP Method -"+req.method+" URL - "+ req.url)  // this log tracking system in which if  user try to access unathorized service then it deos not allow to acces
    next()
@@ -33,7 +32,6 @@ app.get("/home", auth, (req, res) => {
 
     res.status(201).send("Youre logged in as " + email);
 })
->>>>>>> f821520 (final Authorization  is completed)
 app.get("/cars", (req, res) => {
     res.status(200).send("aston martin is coming soon......");
 })
